@@ -1,0 +1,99 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<title>{title}</title>
+</head>
+
+<body>
+	<slot />
+</body>
+
+</html>
+<style is:global>
+	:root {
+		--primary-dark: #1C1C1C;
+		--secondary-dark: #616161;
+		--tertiary-dark: #252525;
+		--primary-colour: #117CFA;
+		--primary-light: #DFEBF7;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		min-height: 100vh;
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		background-color: var(--primary-dark);
+		overflow-x: hidden;
+		font-family: "Open Sans", sans-serif;
+		color: var(--primary-light);
+	}
+
+	/* Works on Firefox */
+	body {
+		scrollbar-width: thin;
+		scrollbar-color: blue;
+	}
+
+	/* Works on Chrome, Edge, and Safari */
+	body::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	body::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	body::-webkit-scrollbar-thumb {
+		background-color: var(--tertiary-dark);
+		border-radius: 20px;
+	}
+
+	body::-webkit-scrollbar-thumb:hover {
+		background-color: rgba(0, 0, 0, 0.179);
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		margin: 0;
+		padding: 0;
+	}
+
+	.flex {
+		display: flex;
+	}
+
+	.flex-row {
+		flex-direction: row;
+	}
+
+	.flex-col {
+		flex-direction: column;
+	}
+</style>

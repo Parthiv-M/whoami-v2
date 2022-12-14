@@ -1,0 +1,21 @@
+{
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro check && astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^1.2.2",
+    "@fontsource/open-sans": "^4.5.13",
+    "@fontsource/public-sans": "^4.5.11",
+    "@fontsource/russo-one": "^4.5.10",
+    "@fontsource/viga": "^4.5.9",
+    "astro": "^1.6.14"
+  }
+}

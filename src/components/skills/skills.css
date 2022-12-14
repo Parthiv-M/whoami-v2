@@ -1,0 +1,30 @@
+.skill-wrapper {
+    width: 45vw;
+}
+
+.skill-wrapper h4 {
+    font-size: 1.2rem;
+    font-family: 'Russo One', sans-serif;
+    letter-spacing: 0.1rem;
+    margin-bottom: 5px;
+}
+
+.skill-wrapper h4 span {
+    font-weight: light;
+    color: #117CFA;
+}
+
+.circles-wrapper {
+    margin-top: 20px;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 820px) {
+    .skill-wrapper {
+        width: 85vw;
+    }
+    .circles-wrapper {
+        gap: 7px;
+    }
+}

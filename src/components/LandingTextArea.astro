@@ -1,0 +1,115 @@
+---
+import "@fontsource/russo-one"
+---
+
+<div class="text-area flex flex-col">
+    <div class="flex">
+        <h2 class="developer">Developer</h2>
+        <a href="#projects" class="side-button dev">
+            <div class="flex" style="align-items: center; justify-content:center">
+                <p>See Projects</p>
+                <img src="/assets/icons/arrow-right.svg" height="15" />
+            </div>
+        </a>
+    </div>
+    <div class="flex">
+        <h2 class="writer">Writer</h2>
+        <a href="/storyboard" class="side-button write">
+            <div class="flex" style="align-items: center; justify-content:center">
+                <p>See Storyboard</p>
+                <img src="/assets/icons/arrow-right.svg" height="15" />
+            </div>
+        </a>
+    </div>
+    <div class="flex">
+        <h2 class="artist">Artist</h2>
+        <a href="/artwork" class="side-button art">
+            <div class="flex" style="align-items: center; justify-content:center">
+                <p>See Sketches</p>
+                <img src="/assets/icons/arrow-right.svg" height="15" />
+            </div>
+        </a>
+    </div>
+</div>
+
+<style>
+    .text-area {
+        height: 80%;
+        justify-content: center;
+    }
+
+    .text-area div {
+        align-items: center;
+        gap: 10px;
+    }
+
+    .text-area h2 {
+        font-size: 3.5rem;
+        margin: 10px 0;
+        padding: 0;
+        letter-spacing: 0.7rem;
+        font-family: 'Russo One', sans-serif;
+    }
+
+    .side-button {
+        padding: 8px 10px;
+        border-radius: 10px;
+        margin-left: 2%;
+    }
+
+    .dev {
+        background-color: #5cb904;
+    }
+
+    .dev:hover {
+        background-color: rgb(92, 185, 4, 0.8);
+    }
+
+    .write {
+        background-color: #6005c1;
+    }
+
+    .write:hover {
+        background-color: rgb(96, 5, 193, 0.8);
+    }
+
+    .art {
+        background-color: #c50170;
+    }
+
+    .art:hover {
+        background-color: rgb(197, 1, 112, 0.8);
+    }
+
+    .developer:hover {
+        text-shadow: -8px 8px 0px #5cb904;
+        transform: translateX(10px);
+        transition: all 500ms;
+    }
+
+    .writer:hover {
+        text-shadow: -8px 8px 0px #6005c1;
+        transform: translateX(10px);
+        transition: all 500ms;
+    }
+
+    .artist:hover {
+        text-shadow: -8px 8px 0px #c50170;
+        transform: translateX(10px);
+        transition: all 500ms;
+    }
+
+    @media only screen and (max-width: 820px) {
+        .text-area {
+            height: 100%;
+        }
+
+        .text-area h2 {
+            font-size: 2.6rem;
+        }
+
+        .side-button div p {
+            display: none;
+        }
+    }
+</style>
