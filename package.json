@@ -1,8 +1,8 @@
 {
-  "name": "@example/basics",
+  "name": "parthiv-menon",
   "type": "module",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "astro check && astro dev",
     "start": "astro dev",
