@@ -1,0 +1,221 @@
+<div class="work-grid">
+    <div class="work-card start-span-2 flex flex-col">
+        <p class="role">Part time</p>
+        <h2 class="organisation">WikiMedia Foundation</h2>
+        <div class="flex meta">
+            <h4 class="designation">Wikisource Technical Fellow</h4>
+            <p>•</p>
+            <h4 class="duration">October 2022 - Present</h4>
+        </div>
+        <p class="description">
+            I have been working as a WikiSource Technical Fellow
+            at the WikiMedia Foundation on <span class="emphasise">developing tools for Wikisource
+                and the rest of the open community</span>. I have also <span class="emphasise">co-hosted regular
+                Wikisource Triage Meetings</span>, which provide crucial updates about the
+            work being undertaken by the community, globally. Working in a globally
+            distributed team encompassing a myriad of cultures and a variety of
+            people has broadened my vision of working together and has helped me contribute
+            better to the movement in question.
+        </p>
+        <h4>Skills Involved</h4>
+        <div class="tech flex">
+            <p>LAMP Stack</p>
+            <p>JavaScript</p>
+            <p>Docker</p>
+            <p>Gerrit and Gitlab</p>
+        </div>
+    </div>
+    <div class="work-card linktree">
+        <h4>Find my org.</h4>
+        <div class="links flex flex-col">
+            <a class="link-tab flex" href="https://wikimediafoundation.org/" target="_blank">
+                <p>WikiMedia Foundation</p>
+                <img src="/assets/icons/arrow-right.svg" height="15px" width="12px" />
+            </a>
+            <a class="link-tab flex" href="https://iisc.ac.in/" target="_blank">
+                <p>IISc Bangalore</p>
+                <img src="/assets/icons/arrow-right.svg" height="15px" width="12px" />
+            </a>
+            <a class="link-tab flex" href="https://play.google.com/store/apps/details?id=com.dot.food" target="_blank">
+                <p>Dotfood</p>
+                <img src="/assets/icons/arrow-right.svg" height="15px" width="12px" />
+            </a>
+            <a class="link-tab flex" href="https://manipal.edu/mu/campus-life/mahe-experience/innovation-center.html"
+                target="_blank">
+                <p>Innovation Center</p>
+                <img src="/assets/icons/arrow-right.svg" height="15px" width="12px" />
+            </a>
+        </div>
+    </div>
+    <div class="work-card flex flex-col">
+        <p class="role">Intern</p>
+        <h2 class="organisation">IISc Bangalore</h2>
+        <div class="flex meta">
+            <h4 class="designation">Software Developer</h4>
+            <p>•</p>
+            <h4 class="duration">January 2023 - Present</h4>
+        </div>
+        <p class="description">
+            I am an incoming software development intern at Material Research Center under the Indian Institute of
+            Science,
+            Bangalore. The project involves curating, and publishing to the world, ML models regarding thermoelectric
+            materials
+            from the aNANt database.
+        </p>
+        <h4>Skills Involved</h4>
+        <div class="tech flex">
+            <p>Fullstack JS</p>
+            <p>UI/UX</p>
+            <p>Devops</p>
+            <p>Python and ML</p>
+        </div>
+    </div>
+    <div class="work-card end-span-2 flex flex-col">
+        <p class="role">Co-Founder</p>
+        <h2 class="organisation">Dotfood</h2>
+        <div class="flex meta">
+            <h4 class="designation">Co-Founder and Developer</h4>
+            <p>•</p>
+            <h4 class="duration">November 2021 - Present</h4>
+        </div>
+        <p class="description">
+            Along with a friend of mine, we founded a food delivery app based start-up
+            that catered to the food and delivery needs of students in college campuses.
+            We built both an app for the consumers and a web-based admin interface for
+            the restaurants. Currently, it is operating out of Manipal with more than
+            5000 downloads.
+        </p>
+        <h4>Skills Involved</h4>
+        <div class="tech flex">
+            <p>ReactJS</p>
+            <p>Firebase</p>
+            <p>UI/UX</p>
+            <p>App Development</p>
+            <p>Entrepreurship</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .work-grid {
+        display: grid;
+        grid-template-columns: 40% 40% 20%;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .work-card {
+        min-height: 250px;
+        background-color: var(--tertiary-dark);
+        border-radius: 10px;
+        border: 2px solid transparent;
+        padding: 1rem;
+    }
+
+    .work-card:hover {
+        background-size: 550px;
+        border: 2px solid var(--primary-colour);
+    }
+
+    .start-span-2 {
+        grid-column: 1 / span 2;
+    }
+
+    .end-span-2 {
+        grid-column: 2 / span 2;
+    }
+
+    .linktree {
+        background-color: var(--primary-colour);
+        padding: 0.5rem;
+    }
+
+    .linktree h4 {
+        font-family: 'Russo One', sans-serif;
+        letter-spacing: 2px;
+        font-size: 1.1rem;
+    }
+
+    .links {
+        margin-top: 10px;
+        gap: 5px;
+    }
+
+    .link-tab {
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(0, 0, 0, 0.162);
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .link-tab:hover {
+        background-color: rgba(255, 255, 255, 0.101);
+    }
+
+    .meta {
+        margin-top: 5px;
+        gap: 5px;
+    }
+
+    .role {
+        width: fit-content;
+        background-color: var(--primary-colour);
+        padding: 3px 7px;
+        font-size: 0.8rem;
+        border-radius: 10px;
+        margin-bottom: 3px;
+    }
+
+    .designation {
+        color: var(--primary-colour);
+        font-weight: bold;
+    }
+
+    .duration {
+        color: var(--secondary-dark);
+    }
+
+    .description {
+        margin: 10px 0;
+    }
+
+    .tech {
+        gap: 7px;
+        margin-top: 3px;
+        font-family: monospace;
+        flex-flow: wrap;
+    }
+
+    .tech p {
+        background-color: var(--primary-dark);
+        padding: 3px 7px;
+        font-size: 0.9rem;
+        border-radius: 10px;
+    }
+
+    @media only screen and (max-width: 820px) {
+        .work-grid {
+            display: flex;
+            flex-flow: column;
+        }
+
+        .meta {
+            flex-direction: column;
+            gap: 0px;
+        }
+
+        .meta p {
+            display: none;
+        }
+
+        .tech {
+            margin-top: 5px;
+            gap: 3px;
+        }
+
+        .linktree {
+            display: none;
+        }
+    }
+</style>

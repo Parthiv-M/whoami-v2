@@ -7,6 +7,7 @@ import SkillArea from "@components/skills/SkillArea";
 import ProjectArea from "@components/projects/ProjectArea.astro";
 import Footer from "@components/common/Footer.astro";
 import ResearchArea from "@components/ResearchArea.astro";
+import WorkArea from "@components/work/WorkArea.astro";
 ---
 
 <Layout title="Parthiv Menon">
@@ -48,8 +49,19 @@ import ResearchArea from "@components/ResearchArea.astro";
 		<div class="projects-container" id="projects">
 			<ProjectArea />
 		</div>
-		<div class="research-container flex flex-col" id="research">
-			<div class="research-header">
+		<div class="section" id="workxp">
+			<div class="section-header">
+				<h2>Work Experience</h2>
+				<p>
+					I have been contributing as a <em>fullstack developer</em> in multiple places, including 
+					start-up environments and corporate organisations. Additionally, I have worked
+					on multiple projects under the aegis of the Innovation Center, MAHE, during my college days.  
+				</p>
+			</div>
+			<WorkArea />
+		</div>
+		<div class="section flex flex-col" id="research">
+			<div class="section-header">
 				<h2>Research Experience</h2>
 				<p>I have experience working as a research collaborator at the undergraduate
 					level. Working in the areas of <em>NLP</em> and <em>Brain Computing Interface</em>, I have 
@@ -156,27 +168,6 @@ import ResearchArea from "@components/ResearchArea.astro";
 	}
 
 	/* research styling */
-	.research-container {
-		width: 70%;
-		padding: 2rem;
-		margin: 0 auto;
-	}
-
-	.research-header h2 {
-		font-family: "Russo One", sans-serif;
-		text-transform: uppercase;
-		letter-spacing: 0.2rem;
-		font-size: 1.5rem;
-	}
-
-	.research-header p {
-		color: var(--secondary-dark);
-		font-weight: 700;
-	}
-
-	.research-header p em {
-		color: var(--primary-colour);
-	}
 
 	.res-tags {
         background-color: var(--tertiary-dark);
@@ -233,11 +224,6 @@ import ResearchArea from "@components/ResearchArea.astro";
 			display: block;
 			width: 80%;
 			margin: 50px auto;
-		}
-
-		.research-container {
-			width: 80%;
-			padding: 1rem;
 		}
 	}
 </style>
