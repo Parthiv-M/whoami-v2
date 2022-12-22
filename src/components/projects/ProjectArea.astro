@@ -3,21 +3,16 @@ import ProjectCard from "./ProjectCard.astro";
 ---
 
 <div class="project-grid">
-    <div class="col flex flex-col project-card-wrapper">
-        <ProjectCard 
-            name="Sea Shell"
+    <div class="flex flex-col project-card-wrapper">
+        <ProjectCard name="Sea Shell"
             description="A custom Lost at Sea themed Linux shell that contains several default Linux commands as well as a few custom commands"
-            githubUrl="https://github.com/Parthiv-M/sea-shell" 
-            badgeList={["Python", "Linux", "Scripting"]}
-        />
-        <ProjectCard 
-            name="TCP Flag Filter"
+            githubUrl="https://github.com/Parthiv-M/sea-shell" badgeList={["Python", "Linux" , "Scripting" ]} />
+        <ProjectCard name="TCP Flag Filter"
             description="A simple command line application that lets a user obtain information about packets filtered according to any of the TCP header flags"
-            githubUrl="https://github.com/Parthiv-M/tcp-flag-filter" 
-            badgeList={["Python", "Networking", "Wireshark"]}
-        />
+            githubUrl="https://github.com/Parthiv-M/tcp-flag-filter" badgeList={["Python", "Networking" , "Wireshark"
+            ]} />
     </div>
-    <div class="col flex flex-col project-card-wrapper">
+    <div class="flex flex-col project-card-wrapper">
         <div class="project-card home flex flex-col">
             <div>
                 <h3>PROJECTS</h3>
@@ -31,26 +26,20 @@ import ProjectCard from "./ProjectCard.astro";
                 <img src="/assets/icons/arrow-right.svg" height="15px" width="12px" />
             </div>
         </div>
-        <ProjectCard 
-            name="The Handouter"
+        <ProjectCard name="The Handouter"
             description="Created an automated newsletter distributor that doles out copies of a newsletter (with a new punch-line every time) to subscribers from a database"
-            githubUrl="https://github.com/Parthiv-M/the-hand-outer" 
-            badgeList={["NodeJS", "Nodemailer", "HBS", "Automation"]}
-        />
+            githubUrl="https://github.com/Parthiv-M/the-hand-outer" badgeList={["NodeJS", "Nodemailer" , "HBS"
+            , "Automation" ]} />
     </div>
-    <div class="col flex flex-col project-card-wrapper">
-        <ProjectCard 
-            name="wearemist.in"
+    <div class="flex flex-col project-card-wrapper">
+        <ProjectCard name="wearemist.in"
             description="Built the fourth version of the website, as well as helped build and maintain several sister sites—including the events portal and the cybermanipal page, all of which are linked from the main website"
-            githubUrl="https://github.com/Parthiv-M/mist-v4" 
-            badgeList={["NextJS", "Typescript", "MongoDB", "Framer Motion", "Vercel"]}
-        />
-        <ProjectCard 
-            name="ecellmit.com"
+            githubUrl="https://github.com/Parthiv-M/mist-v4" badgeList={["NextJS", "Typescript" , "MongoDB"
+            , "Framer Motion" , "Vercel" ]} />
+        <ProjectCard name="ecellmit.com"
             description="Built and maintained two versions of the official website of the E-Cell, as well as built the portal for Manipal Entrepreneurship Summit 2022"
-            githubUrl="https://github.com/Parthiv-M/ecellmit-v2"
-            badgeList={["ReactJS", "NodeJS", "MongoDB", "AWS"]} 
-        />
+            githubUrl="https://github.com/Parthiv-M/ecellmit-v2" badgeList={["ReactJS", "NodeJS" , "MongoDB" , "AWS"
+            ]} />
     </div>
 </div>
 
@@ -119,6 +108,28 @@ import ProjectCard from "./ProjectCard.astro";
 
     .to-github a:hover {
         color: white;
+    }
+
+    @media only screen and (max-width: 1224px) {
+        .project-grid {
+            width: 95%;
+            display: flex;
+            padding: 0;
+            margin: 0 auto;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            letter-spacing: 0.2rem;
+        }
+
+        .project-card {
+            width: 27vw;
+        }
+
+        .project-card-wrapper {
+            display: flex;
+        }
     }
 
     @media only screen and (max-width: 820px) {
