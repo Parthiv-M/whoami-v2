@@ -1,0 +1,35 @@
+---
+export async function getStaticPaths() {
+    const posts = await Astro.glob('../../stories/**/*.md');
+    return posts.map(post => ({
+        params: {
+            slug: post.frontmatter.slug
+        },
+        props: {
+            post
+        },
+    }));
+}
+const { Content } = Astro.props.post;
+---
+
+<div class={`markdown-content ${Astro.props.post.frontmatter.type.toLowerCase()}`}>
+    <Content />
+</div>
+
+<style is:global>
+    .markdown-content p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .prose p {
+        margin: 10px 0;
+    }
+</style>

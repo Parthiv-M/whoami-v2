@@ -1,0 +1,125 @@
+---
+import "@fontsource/russo-one"
+import "@fontsource/open-sans"
+const { frontmatter } = Astro.props;
+---
+
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{frontmatter.title} | Parthiv Menon</title>
+</head>
+
+<body>
+    <div class={`storyboard-content ${frontmatter.type.toLowerCase()}-wrapper`}>
+        <div class="storyboard-meta">
+            <p class="storyboard-date">{frontmatter.date}</p>
+            <p>•</p>
+            <p class="storyboard-type">{frontmatter.type}</p>
+        </div>
+        <h1 class="storyboard-title">{frontmatter.title}</h1>
+        <slot />
+    </div>
+</body>
+
+</html>
+
+<style>
+    :root {
+        --primary-dark: #1C1C1C;
+        --secondary-dark: #616161;
+        --tertiary-dark: #252525;
+        --primary-colour: #117CFA;
+        --primary-light: #DFEBF7;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        min-height: 100vh;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        background-color: var(--primary-dark);
+        overflow-x: hidden;
+        font-family: "Open Sans", sans-serif;
+        color: var(--primary-light);
+    }
+
+    /* Works on Firefox */
+    body {
+        scrollbar-width: thin;
+        scrollbar-color: blue;
+    }
+
+    /* Works on Chrome, Edge, and Safari */
+    body::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    body::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background-color: var(--tertiary-dark);
+        border-radius: 20px;
+    }
+
+    body::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.179);
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .storyboard-content {
+        margin: 0 auto;
+        padding: 5rem;
+    }
+
+    .prose-wrapper {
+        width: 60%;
+    }
+
+    .poem-wrapper {
+        width: fit-content;
+    }
+
+    .storyboard-title {
+        font-family: 'Russo One', sans-serif;
+        letter-spacing: 0.1rem;
+        margin-bottom: 10px;
+    }
+
+    .storyboard-meta {
+        display: flex;
+        gap: 4px;
+    }
+
+    .storyboard-date {
+        color: var(--secondary-dark);
+    }
+
+    .storyboard-type {
+        color: var(--primary-colour);
+    }
+
+    @media only screen and (max-width: 820px) {
+        .storyboard-content {
+            padding: 2rem 1rem;
+        }
+
+        .prose-wrapper,
+        .poem-wrapper {
+            width: 80%;
+        }
+    }
+</style>
