@@ -11,6 +11,10 @@ import ProjectCard from "./ProjectCard.astro";
             description="A simple command line application that lets a user obtain information about packets filtered according to any of the TCP header flags"
             githubUrl="https://github.com/Parthiv-M/tcp-flag-filter" badgeList={["Python", "Networking" , "Wireshark"
             ]} />
+            <ProjectCard name="Faceless"
+            description="Designed and built the Faceless website that allowed gameplay and answer submission for an Incognito '21 event—the website received active participation of more than 100 people over the course of 48 hours"
+            githubUrl="https://github.com/Parthiv-M/faceless" badgeList={["ReactJS", "NodeJS" , "MongoDB" , "AWS", "HalfmoonCSS"
+            ]} />
     </div>
     <div class="flex flex-col project-card-wrapper">
         <div class="project-card home flex flex-col">
@@ -33,12 +37,16 @@ import ProjectCard from "./ProjectCard.astro";
     </div>
     <div class="flex flex-col project-card-wrapper">
         <ProjectCard name="wearemist.in"
-            description="Built the fourth version of the website, as well as helped build and maintain several sister sites—including the events portal and the cybermanipal page, all of which are linked from the main website"
+            description="Designed and built the fourth version of the website, as well as helped build and maintain several sister sites—including the events portal and the cybermanipal page, all of which are linked from the main website"
             githubUrl="https://github.com/Parthiv-M/mist-v4" badgeList={["NextJS", "Typescript" , "MongoDB"
             , "Framer Motion" , "Vercel" ]} />
         <ProjectCard name="ecellmit.com"
-            description="Built and maintained two versions of the official website of the E-Cell, as well as built the portal for Manipal Entrepreneurship Summit 2022"
+            description="Designed, built, and maintained two versions of the official website of the E-Cell, which hosts a repository of resources for entrepreneurship as well"
             githubUrl="https://github.com/Parthiv-M/ecellmit-v2" badgeList={["ReactJS", "NodeJS" , "MongoDB" , "AWS"
+            ]} />
+        <ProjectCard name="MES Portal"
+            description="Designed and built and maintained the one-stop-shop portal for Manipal Entrepreneurship Summit 2022, attended by more than 2000 people in the span of a week"
+            githubUrl="https://github.com/Parthiv-M/mes-portal" badgeList={["ReactJS", "NodeJS" , "MongoDB" , "AWS"
             ]} />
     </div>
 </div>
@@ -60,7 +68,7 @@ import ProjectCard from "./ProjectCard.astro";
     }
 
     .project-card-wrapper:nth-child(2) {
-        justify-content: flex-end;
+        justify-content: center;
         padding-top: 100px;
     }
 
