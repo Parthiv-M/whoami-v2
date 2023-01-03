@@ -1,0 +1,95 @@
+---
+import ArtLayout from "src/layouts/ArtLayout.astro";
+import artworks from "./../utils/constants";
+---
+
+<ArtLayout>
+    <div style="padding: 10px">
+        <div class="artwork-wrapper">
+            <div class="artwork-mover">
+                {
+                artworks.slice(0,artworks.length / 3).map((artwork:any) => {
+                return (<img class="artwork" height="300px" src={artwork} onclick={`window.open('${artwork}', '_blank' );`}/>)
+                })
+                }
+            </div>
+        </div>
+        <div class="artwork-wrapper">
+            <div class="artwork-mover">
+                {
+                artworks.slice(artworks.length / 3, artworks.length * (2 / 3)).map((artwork:any) => {
+                return (<img class="artwork" height="300px" src={artwork} onclick={`window.open('${artwork}', '_blank' );`}/>)
+                })
+                }
+            </div>
+        </div>
+        <div class="artwork-wrapper">
+            <div class="artwork-mover">
+                {
+                artworks.slice(artworks.length * (2/ 3), undefined).map((artwork:any) => {
+                return (<img class="artwork" height="300px" src={artwork} onclick={`window.open('${artwork}', '_blank' );`}/>)
+                })
+                }
+            </div>
+        </div>
+    </div>
+</ArtLayout>
+
+<style>
+    .artwork-wrapper {
+        padding: 10px;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+    }
+
+    /* Works on Chrome, Edge, and Safari */
+    .artwork-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .artwork-mover {
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .artwork {
+        border-radius: 5px;
+        opacity: 0.6;
+    }
+
+    .artwork:hover {
+        opacity: 1;
+        transform: scale(1.1);
+        z-index: 10;
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    let numberOfArtworks: number = document?.querySelectorAll(".artwork")?.length;
+    let numberOfPixelsToMove: number = (numberOfArtworks - 4) * 300;
+
+    // extra scroll given to every wrapper so that even on manually scrolling 
+    // back to a previous position, it keeps scrolling forward until numberOfPixelsToMove 
+    // is reached
+
+    for (let i = 0; i < numberOfPixelsToMove; i++) {
+        setTimeout(() => {
+            document?.querySelectorAll(".artwork-wrapper")[0]?.scrollBy(i, 0);
+        }, 1500 * i)
+    }
+
+    for (let i = 0; i < numberOfPixelsToMove; i++) {
+        setTimeout(() => {
+            document?.querySelectorAll(".artwork-wrapper")[1]?.scrollBy(i, 0);
+        }, 1500 * i)
+    }
+
+    for (let i = 0; i < numberOfPixelsToMove; i++) {
+        setTimeout(() => {
+            document?.querySelectorAll(".artwork-wrapper")[2]?.scrollBy(i, 0);
+        }, 1500 * i)
+    }
+</script>

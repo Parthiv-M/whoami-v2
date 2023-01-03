@@ -1,0 +1,93 @@
+---
+import "@fontsource/russo-one"
+import "@fontsource/open-sans"
+const { title } = Astro.props;
+---
+
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} | Parthiv Menon</title>
+</head>
+
+<body>
+    <div class="story-nav">
+        <div style="display: flex; gap: 7px">
+            <a href="https://github.com/parthiv-m" target="_blank"><img src="/assets/icons/connect/github.svg" height="20px" width="20px" /></a>
+            <a href="https://instagram.com/_.parthiv_" target="_blank"><img src="/assets/icons/connect/instagram.svg" height="20px" width="20px" /></a> 
+            <a href="https://linkedin.com/in/parthivmenon" target="_blank"><img src="/assets/icons/connect/linkedin.svg" height="20px" width="20px" /></a>   
+        </div>
+        <a href="/">Home</a>
+    </div>
+    <slot />
+</body>
+
+</html>
+
+<style>
+    :root {
+        --primary-dark: #1C1C1C;
+        --secondary-dark: #616161;
+        --tertiary-dark: #252525;
+        --primary-colour: #117CFA;
+        --primary-light: #DFEBF7;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        min-height: 100vh;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        background-color: var(--primary-dark);
+        overflow-x: hidden;
+        font-family: "Open Sans", sans-serif;
+        color: var(--primary-light);
+    }
+
+    /* Works on Firefox */
+    body {
+        scrollbar-width: thin;
+        scrollbar-color: blue;
+    }
+
+    /* Works on Chrome, Edge, and Safari */
+    body::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    body::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background-color: var(--tertiary-dark);
+        border-radius: 20px;
+    }
+
+    body::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.179);
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .story-nav {
+        display: flex;
+        padding: 15px;
+        justify-content: space-between;
+        font-size: 0.8rem;
+    }
+
+    .story-nav a {
+        color: var(--secondary-dark);
+    }
+</style>
