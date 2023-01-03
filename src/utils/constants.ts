@@ -18,7 +18,11 @@ const artworks: string[] = [
     "https://ik.imagekit.io/vk9h2knt4xe/Artwork/IMG_20191211_145206_076_Jp1z7lidZKc.jpg",
     "https://ik.imagekit.io/vk9h2knt4xe/Artwork/IMG_20191125_195434_133_C49Oy1S-lfp.jpg",
     "https://ik.imagekit.io/vk9h2knt4xe/Artwork/IMG_20190818_170712_157_gsmOUaNIdXHX.jpg",
-    "https://ik.imagekit.io/vk9h2knt4xe/Artwork/IMG_20190805_104018_592_sjardco23tl.jpg"
+    "https://ik.imagekit.io/vk9h2knt4xe/Artwork/IMG_20190805_104018_592_sjardco23tl.jpg",
+    "https://ik.imagekit.io/vk9h2knt4xe/Artwork/IMG_20210920_142755-01_zp--_iJXy.jpeg",
+    "https://ik.imagekit.io/vk9h2knt4xe/Artwork/IMG_20211005_102618-01_cEBLUl6R9.jpeg",
+    "https://ik.imagekit.io/vk9h2knt4xe/Artwork/IMG_20210913_194036-01_SyjNIc1X61.jpeg",
+    "https://ik.imagekit.io/vk9h2knt4xe/Artwork/IMG_20210624_191854_f-oGglYEu.jpg"
 ]
 
 export default artworks;
