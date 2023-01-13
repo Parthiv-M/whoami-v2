@@ -25,4 +25,49 @@ const artworks: string[] = [
     "https://ik.imagekit.io/vk9h2knt4xe/Artwork/IMG_20210624_191854_f-oGglYEu.jpg"
 ]
 
-export default artworks;
+const skillData: any[] = [
+    {
+        type: "home",
+        name: "My Skills",
+        iconPath: "/assets/icons/skills/home.svg",
+        description: "I have dabbled in a wide variety of technical and non-technical domains and have gained experience in quite a few of them. From designing to developing software, its successful deployment and maintanence. Go ahead and click on any of those bubbles to learn more about how I delved into each one of them.",
+    },
+    {
+        type: "skill",
+        name: "C Language",
+        iconPath: "/assets/icons/skills/c.svg",
+        description: "Right from 12th grade, I have been familiar with C language. Stepping into college, this is how I learnt my data structures and algorithms, and the basics of programming. Though not a very enjoyable process, I can code up solutions to problems in C to a great extent. This also laid the foundation for me to learn C++ and Java eventually.",
+    },
+    {
+        type: "skill",
+        name: "JavaScript",
+        iconPath: "/assets/icons/skills/js.svg",
+        description: "By virtue of being a full stack developer, Javascript is my go-to language for a wide variety of tasks. From automation scripts to frontend frameworks and backend APIs—I love exploring anything that reeks of Javascript. Over time, I have started to code some of my larger projects in Typescript as well (this website included).",
+    },
+    {
+        type: "skill",
+        name: "Python",
+        iconPath: "/assets/icons/skills/python.svg",
+        description: "It is inevitable that every programmer, at some point or another, stumbles upon this language. As I started doing ML projects, my proficiency with Python and its libraries grew, along with my Python scripting skills. These eventually helped me in my research ventures as well.",
+    },
+    {
+        type: "skill",
+        name: "MongoDB and SQL",
+        iconPath: "/assets/icons/skills/database.svg",
+        description: "I have been familiar with SQL since my 12th grade and have worked with database management projects. I also learnt about no-SQL databases as I learnt MongoDB and managed databases for a variety of projects. I prefer no-SQL databases over SQL ones for their ease of use, integration and easier management.",
+    },
+    {
+        type: "skill",
+        name: "AWS",
+        iconPath: "/assets/icons/skills/aws.svg",
+        description: "After starting out with SaaS services like Heroku, I learnt the various facets of DevOps and the cloud, with a large portion of my time directed at AWS. I also learnt about containerisation using Docker and how to effectively manage development and production environments and utilise various cloud services.",
+    },
+    {
+        type: "skill",
+        name: "Figma",
+        iconPath: "/assets/icons/skills/figma.svg",
+        description: "I had been using Photoshop and Illustrator for almost 4 years when I stumbled upon Figma after I entered college. It was refreshing to see how ideation, UI/UX design, and presentation can be transformed into an intriguing process. As a result, I made Figma a crucial tool that aided in planning a lot of my projects.",
+    }
+];
+
+export { artworks, skillData };
