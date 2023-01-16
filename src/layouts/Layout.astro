@@ -1,9 +1,11 @@
 ---
 export interface Props {
 	title: string;
+	description: string;
+	extraKeywords: string | "";
 }
 
-const { title } = Astro.props;
+const { title, description, extraKeywords } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -12,7 +14,14 @@ const { title } = Astro.props;
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<meta name="description" content={description} />
+	<meta name="keywords" content={"parthiv, menon, parthiv menon, portfolio, website".concat(", ").concat(extraKeywords)} />
+	<link rel=" icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="canonical" href="https://parthivmenon.com" />
+	<meta name="reply-to" content="parthivmenon01@gmail.com" />
+	<meta property="og:title" content="Parthiv Menon" />
+	<meta property="og:description" content={description} />
+	<meta property="og:site_name" content="Parthiv Menon" />
 	<title>{title}</title>
 </head>
 
@@ -120,10 +129,10 @@ const { title } = Astro.props;
 	}
 
 	@media only screen and (max-width: 1224px) {
-        .section {
-            width: 90%;
-        }
-    }
+		.section {
+			width: 90%;
+		}
+	}
 
 	@media only screen and (max-width: 820px) {
 		.section {
