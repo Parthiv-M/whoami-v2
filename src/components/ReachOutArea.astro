@@ -1,0 +1,250 @@
+<div class="stack">
+    <div class="stack-card stack-card-one flex">
+        <div class="flex flex-col name-side">
+            <div>
+                <h3>Connect with me!</h3>
+                <p class="got-something-for-me">Got a great project idea? Got something new for me to learn? Or do you
+                    want to tell me about how I
+                    can improve? I'm all ears!</p>
+            </div>
+            <p class="email-me">
+                Or
+                <a href="mailto:parthivmenon01@gmail.com?subject=Connecting from your website!">
+                    drop me an email
+                </a>
+            </p>
+        </div>
+        <div class="flex flex-col form-side">
+            <p>// parthivmenon.com</p>
+            <input required class="name connect-input" placeholder="Name" />
+            <p class="error-text name-error">Enter your name</p>
+            <input required class="email connect-input" placeholder="Email ID" />
+            <p class="error-text email-error">Enter a valid email ID</p>
+            <textarea required id="message" class="message connect-input connect-textarea"
+                placeholder="What do you want to tell me?" />
+            <p class="error-text message-error">Type something for me!</p>
+            <button id="connect-button" type="submit">SEND</button>
+        </div>
+    </div>
+    <div class="stack-card stack-card-two"></div>
+    <div class="stack-card stack-card-three"></div>
+</div>
+
+<script>
+    import emailjs from "@emailjs/browser";
+    const name = (document.querySelector(".name") as HTMLInputElement);
+    const email = (document.querySelector(".email") as HTMLInputElement);
+    const message = (document.getElementById("message") as HTMLInputElement);
+    const resetErrors = () => {
+        (document.querySelector(".name-error") as HTMLElement).style.display = "none";
+        (document.querySelector(".email-error") as HTMLElement).style.display = "none";
+        (document.querySelector(".message-error") as HTMLElement).style.display = "none";
+    }
+    const resetFields = () => {
+        name.value = "";
+        email.value = "";
+        message.value = "";
+    }
+    document.querySelector("#connect-button")?.addEventListener("click", async (e) => {
+        e.preventDefault();
+        resetErrors();
+        if (name.value.trim() === "") {
+            (document.querySelector(".name-error") as HTMLElement).style.display = "block";
+            return;
+        } else if (email.value.trim() === "") {
+            (document.querySelector(".email-error") as HTMLElement).style.display = "block";
+            return;
+        } else if (message.value.trim() === "") {
+            (document.querySelector(".message-error") as HTMLElement).style.display = "block";
+            return;
+        } else {
+            resetErrors();
+        }
+        const templateParams: any = {
+            from_name: name.value.trim(),
+            reply_to: email.value.trim(),
+            message: message.value.trim()
+        }
+
+        // send the email
+        const res = await emailjs.send(
+            import.meta.env.PUBLIC_SERVICE_ID,
+            import.meta.env.PUBLIC_TEMPLATE_ID, templateParams,
+            import.meta.env.PUBLIC_EMAILJS_KEY
+        );
+        if (res.status === 200) {
+            resetFields();
+            (document.querySelector(".form-side p:first-child") as HTMLElement).innerHTML = "THANK YOU!";
+            setTimeout(() => {
+                (document.querySelector(".form-side p:first-child") as HTMLElement).innerHTML = "// parthivmenon.com";
+            }, 5000);
+        } else {
+            (document.querySelector(".form-side p:first-child") as HTMLElement).innerHTML = "Oops, I didn't get that :(";
+            setTimeout(() => {
+                (document.querySelector(".form-side p:first-child") as HTMLElement).innerHTML = "// parthivmenon.com";
+            }, 5000);
+        }
+    })
+
+</script>
+
+<style>
+    .stack {
+        position: relative;
+        min-height: 400px;
+        margin: 20px 0;
+    }
+
+    .stack:hover .stack-card-two {
+        transform: translate(50%, -50%) rotate(-6deg);
+    }
+
+    .stack:hover .stack-card-three {
+        transform: translate(50%, -50%) rotate(4deg);
+    }
+
+    .stack-card {
+        position: absolute;
+        border-radius: 10px;
+        padding: 10px;
+        width: 70%;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        transition: all ease-in 200ms;
+    }
+
+    .stack-card-one {
+        background-color: #ffffff27;
+        z-index: 10;
+        min-height: 300px;
+        backdrop-filter: blur(20px);
+        border: solid #6fb2ff8a 1px;
+    }
+
+    .stack-card-two {
+        background-color: #117efa8c;
+        z-index: 5;
+        transform: translate(50%, -50%) rotate(-5deg);
+        min-height: 300px;
+        backdrop-filter: blur(20px);
+        border: solid #6095d1be 1px;
+    }
+
+    .stack-card-three {
+        background-color: #39629194;
+        z-index: 1;
+        min-height: 300px;
+        transform: translate(50%, -50%) rotate(3deg);
+        border: solid #7d9bbdbe 1px;
+    }
+
+    .name-side {
+        width: 60%;
+        padding: 10px;
+        justify-content: space-between;
+    }
+
+    .name-side h3 {
+        font-family: "Russo One", sans-serif;
+        letter-spacing: 0.15rem;
+        font-size: 1.4rem;
+    }
+
+    .got-something-for-me {
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+
+    .email-me {
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+
+    .email-me a {
+        text-decoration: underline;
+    }
+
+    .form-side {
+        width: 40%;
+        padding: 10px;
+    }
+
+    .form-side p:first-child {
+        font-family: monospace;
+        margin-bottom: 10px;
+        color: #0c3563;
+        font-weight: bold;
+        font-size: 1.2rem;
+        letter-spacing: 0.15rem;
+    }
+
+    .error-text {
+        font-size: 0.7rem;
+        margin: 0;
+        color: white;
+        display: none;
+    }
+
+    .connect-input {
+        background-color: transparent;
+        border: 1px solid #a6cfff;
+        outline: none;
+        margin-top: 4px;
+        padding: 7px 5px;
+        border-radius: 5px;
+        color: white;
+        font-size: 0.75rem;
+    }
+
+    .connect-input::placeholder {
+        color: #a6cfff;
+    }
+
+    .connect-textarea {
+        min-height: 150px;
+        resize: none;
+        font-family: "Open Sans", sans-serif;
+    }
+
+    #connect-button {
+        padding: 7px 0;
+        margin-top: 4px;
+        border: none;
+        border-radius: 5px;
+        font-size: 0.7rem;
+        letter-spacing: 0.2rem;
+        color: var(--tertiary-dark);
+        cursor: pointer;
+    }
+
+    @media only screen and (max-width: 820px) {
+        .stack-card {
+            width: 90%;
+            min-height: 100%;
+        }
+
+        .stack-card-one {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .name-side,
+        .form-side {
+            width: 90%;
+            padding: 5px;
+        }
+
+        .got-something-for-me {
+            font-size: 0.9rem;
+        }
+
+        .email-me {
+            display: none;
+        }
+
+        .connect-input {
+            font-size: 0.85rem;
+        }
+    }
+</style>
