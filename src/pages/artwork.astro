@@ -1,15 +1,26 @@
 ---
+import Footer from "@components/common/Footer.astro";
 import ArtLayout from "src/layouts/ArtLayout.astro";
 import { artworks } from "./../utils/constants";
 ---
 
-<ArtLayout>
+<ArtLayout title="Artworks">
+    <div class="artworks-header">
+        <a class="go-back flex" href="/">
+            <img src="/assets/icons/arrow-right.svg" height="15px" width="12px"
+                style="rotate:180deg; margin-right: 5px" />
+            Back Home
+        </a>
+        <h1>ARTWORKS</h1>
+        <p>Pictures speak louder than words</p>
+    </div>
     <div style="padding: 10px">
         <div class="artwork-wrapper">
             <div class="artwork-mover">
                 {
                 artworks.slice(0,artworks.length / 3).map((artwork:any) => {
-                return (<img class="artwork" height="300px" src={artwork} onclick={`window.open('${artwork}', '_blank' );`}/>)
+                return (<img class="artwork" height="300px" src={artwork} onclick={`window.open('${artwork}', '_blank'
+                    );`} />)
                 })
                 }
             </div>
@@ -18,7 +29,8 @@ import { artworks } from "./../utils/constants";
             <div class="artwork-mover">
                 {
                 artworks.slice(artworks.length / 3, artworks.length * (2 / 3)).map((artwork:any) => {
-                return (<img class="artwork" height="300px" src={artwork} onclick={`window.open('${artwork}', '_blank' );`}/>)
+                return (<img class="artwork" height="300px" src={artwork} onclick={`window.open('${artwork}', '_blank'
+                    );`} />)
                 })
                 }
             </div>
@@ -27,18 +39,64 @@ import { artworks } from "./../utils/constants";
             <div class="artwork-mover">
                 {
                 artworks.slice(artworks.length * (2/ 3), undefined).map((artwork:any) => {
-                return (<img class="artwork" height="300px" src={artwork} onclick={`window.open('${artwork}', '_blank' );`}/>)
+                return (<img class="artwork" height="300px" src={artwork} onclick={`window.open('${artwork}', '_blank'
+                    );`} />)
                 })
                 }
             </div>
         </div>
     </div>
+    <Footer />
 </ArtLayout>
 
 <style>
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .go-back {
+        align-items: center;
+        margin-bottom: 5px;
+        width: fit-content;
+        z-index: 10;
+        text-decoration: none;
+        color: var(--primary-light);
+    }
+
+    .go-back:hover {
+        gap: 5px;
+    }
+
+    .artworks-header {
+        padding: 30px;
+    }
+
+    .artworks-header h1 {
+        font-family: 'Russo One', sans-serif;
+        font-size: 3rem;
+        letter-spacing: 0.3rem;
+    }
+
+    .artworks-header p {
+        letter-spacing: 0.1rem;
+        color: var(--primary-colour);
+        font-weight: bold;
+    }
+
     .artwork-wrapper {
-        padding: 10px;
         overflow-x: scroll;
+        overflow-y: hidden;
         scroll-behavior: smooth;
     }
 
@@ -48,7 +106,7 @@ import { artworks } from "./../utils/constants";
     }
 
     .artwork-mover {
-        padding: 15px;
+        padding: 5px;
         display: flex;
         align-items: center;
         gap: 5px;
