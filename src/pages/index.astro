@@ -41,15 +41,20 @@ import ReachOutArea from "@components/ReachOutArea.astro";
 			</div>
 		</div>
 		<div class="skills-container flex flex-col">
-			<div class="about about-mobile">
-				<h4 style="margin-bottom: 0; font-size: 1.2rem;">I am Parthiv Menon.</h4>
-				<h4 style="margin-top: 0">
-					Passionate about anything that involves creativity,
-					enthusiastic about working on any idea that can get me thinking, and love
-					to play basketball
-				</h4>
+			<div class="skill-area-wrapper">
+				<div class="about about-mobile">
+					<h4 style="margin-bottom: 0; font-size: 1.2rem;">I am Parthiv Menon.</h4>
+					<h4 style="margin-top: 0">
+						Passionate about anything that involves creativity,
+						enthusiastic about working on any idea that can get me thinking, and love
+						to play basketball
+					</h4>
+				</div>
+				<SkillArea client:visible />
 			</div>
-			<SkillArea client:visible />
+			<div class="skill-image-area">
+				<img src="/assets/images/skills.png"/>
+			</div>
 		</div>
 		<div class="projects-container" id="projects">
 			<ProjectArea />
@@ -167,6 +172,18 @@ import ReachOutArea from "@components/ReachOutArea.astro";
 		min-height: 100vh;
 		justify-content: center;
 		align-items: center;
+		display: grid;
+		grid-template-columns: 50% 50%;
+	}
+
+	.skill-area-wrapper {
+		/* background-color: red; */
+		padding: 5rem;
+	}
+
+	.skill-image-area img {
+		height: 100%;
+		width: 100%;
 	}
 
 	/* projects styling */
@@ -195,6 +212,9 @@ import ReachOutArea from "@components/ReachOutArea.astro";
         .whoami-blob {
 			height: 400px;
 			width: 400px;
+		}
+		.skill-area-wrapper {
+			padding: 2.5rem;
 		}
     }
 
@@ -239,6 +259,19 @@ import ReachOutArea from "@components/ReachOutArea.astro";
 			display: block;
 			width: 80%;
 			margin: 50px auto;
+		}
+
+		.skills-container {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.skill-image-area {
+			display: none;
+		}
+
+		.skill-area-wrapper {
+			padding: 1rem;
 		}
 	}
 </style>
