@@ -9,6 +9,9 @@
             Back to Top<span><img src="/assets/icons/arrow-right.svg" height="15px" width="12px" /></span>
         </div>
     </div>
+    <div class="flex lower-half">
+        <p>2023 • Parthiv Menon • <span class="made-with">Built with <a target="_blank" href="https://astro.build/">Astro</a></span></p>
+    </div>
 </footer>
 
 <style>
@@ -42,6 +45,26 @@
     .scroll-to-top:hover span {
         transform: translateX(3px);
         transition: all 500ms;
+    }
+
+    .lower-half {
+        background-color: var(--tertiary-dark);
+        padding: 1rem 2rem;
+    }
+
+    .made-with {
+        color: var(--secondary-dark);
+    }
+
+    .made-with a {
+        text-decoration: underline;
+    }
+
+    @media only screen and (max-width: 820px) {
+        .lower-half {
+            justify-content: center;
+            padding: 2rem;
+        }
     }
 </style>
 
