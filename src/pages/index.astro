@@ -9,6 +9,7 @@ import Footer from "@components/common/Footer.astro";
 import ResearchArea from "@components/ResearchArea.astro";
 import WorkArea from "@components/work/WorkArea.astro";
 import ReachOutArea from "@components/ReachOutArea.astro";
+import WorkExtraCard from "@components/WorkExtraCard.astro";
 ---
 
 <Layout 
@@ -69,6 +70,29 @@ import ReachOutArea from "@components/ReachOutArea.astro";
 				</p>
 			</div>
 			<WorkArea />
+			<div class="work-extra-grid">
+				<WorkExtraCard 
+					title={"Web Dev head"}
+					team={"Manipal Information Security Team"}
+					duration={"August 2021 - September 2022"}
+					description={"I was the Web Development head at Manipal Information Security Team, the official cybersecurity team of our college. Being an active member of the team for three years, I was involved in participating and hosting CTFs, conducting workshops, and  spreading awareness about cybersecurity. As a team, we also organised the hugely successful Incognito22—a tech event that witnessed active international participation."}
+					website={"wearemist.in"}
+				/>
+				<WorkExtraCard 
+					title={"Head of Writing"}
+					team={"The MIT Post"}
+					duration={"October 2021 - September 2022"}
+					description={"As Head of Writing of the official media body of the MIT Post, I was responsible for all the content that was published by the body, along with my other team members. We covered everything that happened in college, from minor events to entire college fests. Newsletters, magazines, articles and social media content—we did it all."}
+					website={"mitpost.com"}
+				/>
+				<WorkExtraCard 
+					title={"Core Committee Member"}
+					team={"Linux Users' Group"}
+					duration={"August 2021 - September 2022"}
+					description={"As an avid user of open source technologies, I was happy to be part of this team of open source enthusiasts. We conducted install fests in college where our team helped students get familiarised with Linux and the rest of the open source ecosystem. We also helmed the LUG community—an open forum for anyone to pitch in about the tech world."}
+					website={"lugm.xyz"}
+				/>
+			</div>
 		</div>
 		<div class="section flex flex-col" id="research">
 			<div class="section-header">
@@ -177,7 +201,6 @@ import ReachOutArea from "@components/ReachOutArea.astro";
 	}
 
 	.skill-area-wrapper {
-		/* background-color: red; */
 		padding: 5rem;
 	}
 
@@ -190,6 +213,14 @@ import ReachOutArea from "@components/ReachOutArea.astro";
 	.projects-container {
 		min-height: 100vh;
 		padding: 2rem 0;
+	}
+
+	/* extra work styling */
+	.work-extra-grid {
+		display: grid;
+		grid-template-columns: 33.33% 33.33% 33.33%;
+		gap: 15px;
+		margin-top: 15px;
 	}
 
 	/* research styling */
@@ -272,6 +303,10 @@ import ReachOutArea from "@components/ReachOutArea.astro";
 
 		.skill-area-wrapper {
 			padding: 1rem;
+		}
+
+		.work-extra-grid {
+			grid-template-columns: 100%;
 		}
 	}
 </style>
