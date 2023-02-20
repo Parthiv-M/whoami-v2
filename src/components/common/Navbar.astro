@@ -50,6 +50,7 @@ const linkData = [
 <script>
     const moreButton = document.querySelector<HTMLElement>(".more")!;
     const mobileLink = document.querySelector<HTMLElement>(".mobile-nav-link a")!;
+    const navbar = document.querySelector<HTMLElement>(".nav-wrapper")!;
     // toggle state of mobile pop up nav-menu 
     const toggleMobileNavMenu = () => {
         const mobileNav = document.querySelector<HTMLElement>(".mobile-nav")!;
@@ -66,7 +67,19 @@ const linkData = [
     });
     mobileLink?.addEventListener("click", () => {
         toggleMobileNavMenu();
-    })
+    });
+
+    // listener for navbar height and shadow
+    const listener = () => {
+      if (window.scrollY > 140) {
+        navbar.style.padding = "5px 10px";
+        navbar.style.boxShadow = "0 2px 30px 1px #252525";
+      } else {
+        navbar.style.padding = "10px";
+        navbar.style.boxShadow = "none";
+      }
+    };
+    window.addEventListener("scroll", listener);
 </script>
 
 <style>
@@ -81,6 +94,7 @@ const linkData = [
         position: fixed;
         background-color: var(--primary-dark);
         z-index: 100;
+        transition: all ease-in-out 500ms;
     }
 
     .parthiv:hover {
