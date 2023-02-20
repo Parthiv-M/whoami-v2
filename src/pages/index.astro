@@ -60,6 +60,32 @@ import WorkExtraCard from "@components/WorkExtraCard.astro";
 		<div class="projects-container" id="projects">
 			<ProjectArea />
 		</div>
+		<div class="section cli">
+			<div class="cli-image">
+				<div class="cli-overlay">
+					<p class="cli-header">
+						I made a CLI portfolio <span></span>
+					</p>
+					<p class="cli-text">
+						Almost a year ago, I made a portfolio detailing who I am and what I do—very similar to this very website in 
+						terms of content. The difference was that it was a Command Line Application, installable with 
+						<span class="install">npx i -g cli-parthiv</span>
+					</p>
+					<div class="cli-buttons flex">
+						<a class="cli-button flex" href="https://github.com/parthiv-m/cli-parthiv" rel="noreferrer" target="_blank">
+							Check on GitHub
+							<span><img src="/assets/icons/arrow-right.svg" style="margin-right: 5px;" height="15px"
+								width="15px" /></span>
+						</a>
+						<a class="cli-button flex" href="https://npmjs.com/package/cli-parthiv" rel="noreferrer" target="_blank">
+							See package on npm
+							<span><img src="/assets/icons/arrow-right.svg" style="margin-right: 5px;" height="15px"
+								width="15px" /></span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>	
 		<div class="section" id="workxp">
 			<div class="section-header">
 				<h2>Work Experience</h2>
@@ -215,6 +241,79 @@ import WorkExtraCard from "@components/WorkExtraCard.astro";
 		padding: 2rem 0;
 	}
 
+	/* CLI styling */
+	.cli-image {
+		background: url("/assets/images/cli.png");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		border-radius: 10px;
+	}
+
+	.cli-overlay {
+		width: 100%;
+		padding: 30px 20px;
+		border-radius: 10px;
+		background-color: rgba(0,0,0,0.8);
+		backdrop-filter: blur(10px);
+	}
+
+	.cli-header {
+		font-family: monospace;
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+
+	@keyframes blink {
+		from {
+			opacity: 0;
+		} to {
+			opacity: 1;
+		}	
+	}
+
+	.cli-header span {
+		height: 20px;
+		width: 12px;
+		margin-left: -10px;
+		margin-bottom: -2px;
+		display: inline-block;
+		background-color: var(--primary-colour);
+		animation: blink 1500ms infinite;
+	}
+
+	.cli-text {
+		margin-top: 10px;
+		font-size: 0.9rem;
+	}
+
+	.install {
+		font-family: monospace;
+		background-color: var(--secondary-dark);
+		padding: 0px 5px;
+		border-radius: 5px;
+	}
+
+	.cli-buttons {
+		margin-top: 10px;
+		gap: 5px;
+		flex-flow: wrap;
+	}
+
+	.cli-button {
+		font-size: 0.9rem;
+		padding: 10px;
+		background-color: rgba(0,0,0,0.6);
+		border-radius: 10px;
+		align-items: center;
+		gap: 5px;
+	}
+
+	.cli-button:hover {
+		background-color: rgba(255,255,255,0.1);
+	}
+
 	/* extra work styling */
 	.work-extra-grid {
 		display: grid;
@@ -303,6 +402,10 @@ import WorkExtraCard from "@components/WorkExtraCard.astro";
 
 		.skill-area-wrapper {
 			padding: 1rem;
+		}
+
+		.cli-overlay {
+			width: auto;
 		}
 
 		.work-extra-grid {
