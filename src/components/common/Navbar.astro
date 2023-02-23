@@ -10,14 +10,14 @@ const linkData = [
 
 <!-- navbar for large screen -->
 <div class="nav-wrapper flex">
-    <a href="/" class="parthiv"><img height="30" src="/assets/images/pOnTheNav.png" /></a>
+    <a href="/" class="parthiv"><img alt="Parthiv Menon" height="30" src="/assets/images/pOnTheNav.png" /></a>
     <ul class="nav-links flex">
         {
         linkData.map((link) => {
         return (
         <li class="nav-link">
             <a href={link.link} class="flex">
-                <img src={link.iconPath} height="15" />
+                <img alt={link.name} src={link.iconPath} height="15" />
                 <span>{link.name}</span>
             </a>
         </li>
@@ -27,7 +27,7 @@ const linkData = [
     </ul>
     <div class="more">
         MORE
-        <img src="assets/icons/more.svg" height="15" />
+        <img alt="More" src="assets/icons/more.svg" height="15" />
     </div>
 </div>
 
@@ -38,7 +38,7 @@ const linkData = [
     return (
     <li class="mobile-nav-link">
         <a href={link.link} class="flex">
-            <img src={link.iconPath} height="15" />
+            <img alt={link.name} src={link.iconPath} height="15" />
             <span>{link.name}</span>
         </a>
     </li>
@@ -56,10 +56,10 @@ const linkData = [
         const mobileNav = document.querySelector<HTMLElement>(".mobile-nav")!;
         if (mobileNav.style.display === "flex") {
             mobileNav.style.display = "none";
-            moreButton.innerHTML = `MORE <img src="assets/icons/more.svg" height="15" />`;
+            moreButton.innerHTML = `MORE <img alt="More" src="assets/icons/more.svg" height="15" />`;
         } else {
             mobileNav.style.display = "flex";
-            moreButton.innerHTML = `LESS <img src="assets/icons/more.svg" style="rotate:180deg" height="15" />`;
+            moreButton.innerHTML = `LESS <img alt="Less" src="assets/icons/more.svg" style="rotate:180deg" height="15" />`;
         }
     }
     moreButton?.addEventListener("click", () => {

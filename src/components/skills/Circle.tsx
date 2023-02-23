@@ -33,7 +33,7 @@ const Circle = (props: CircleProps) => {
                 }
             }
         >
-            <img src={props?.iconPath} height="20px"/>
+            <img alt={props?.name} src={props?.iconPath} height="25" width="25"/>
             <p 
                 style={{
                     color: `${(props?.type !== "home") && (props?.name !== "") && (props?.name?.toLowerCase() === props?.selectedSkill?.name?.toLowerCase()) ? "#117CFA" : ""}`

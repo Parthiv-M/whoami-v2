@@ -9,7 +9,7 @@ import { artworks } from "./../utils/constants";
             <div class="art-back">
                 <div class="artworks-header">
                     <a class="go-back flex" href="/">
-                        <img src="/assets/icons/arrow-right.svg" height="15px" width="12px"
+                        <img alt="Right arrow" src="/assets/icons/arrow-right.svg" height="15px" width="12px"
                             style="rotate:180deg; margin-right: 5px" />
                         Back Home
                     </a>
@@ -19,7 +19,7 @@ import { artworks } from "./../utils/constants";
                         or objects. It has been a hobby of mine ever since I remember.
                     </p>
                     <div style="text-align: right; margin-right: 10px">
-                        <img class="theProton" src="/assets/images/theProtonVector.png" />
+                        <img alt="theProton" class="theProton" src="/assets/images/theProtonVector.png" />
                     </div>  
                 </div>
             </div>
@@ -29,7 +29,7 @@ import { artworks } from "./../utils/constants";
                     artworks.map((artwork: string) => {
                         return (
                             <div class="swipey-card">
-                                <img src={artwork} />
+                                <img alt="Artwork" src={artwork} />
                                 <p class="by-line">Parthiv Menon</p>
                             </div>
                         )
@@ -40,7 +40,7 @@ import { artworks } from "./../utils/constants";
                             <p> While I work on newer sketches, why don't you go see the older ones again?</p>
                         </div>
                         <div class="refresh-button">
-                            <img src="/assets/icons/reload.svg" height="15" width="15"/>See it again
+                            <img alt="Refresh list" src="/assets/icons/reload.svg" height="15" width="15"/>See it again
                         </div>
                     </div>
                 </div>
